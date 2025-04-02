@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 export const App = () => {
   return (
     <BrowserRouter>
-      <NavBar />
+      <NavBar/>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/error" element={<ErrorPage />} />
