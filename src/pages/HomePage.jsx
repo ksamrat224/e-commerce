@@ -6,6 +6,7 @@ const products = [
   {
     name: "Alper Kamu",
     role: "UI Developer",
+    price: "5000",
     image:
       "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
@@ -14,6 +15,7 @@ const products = [
   {
     name: "Holden Caulfield",
     role: "UI Developer",
+    price: "5000",
     image:
       "https://plus.unsplash.com/premium_photo-1679079456083-9f288e224e96?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
@@ -22,6 +24,7 @@ const products = [
   {
     name: "Atticus Finch",
     role: "UI Developer",
+    price: "5000",
     image:
       "https://images.unsplash.com/photo-1698417931857-23a611285438?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
@@ -30,6 +33,7 @@ const products = [
   {
     name: "Henry Letham",
     role: "UI Developer",
+    price: "5000",
     image:
       "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
