@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 const ProductCard = ({ product }) => {
   return (
     <div className="p-4 lg:w-1/4 md:w-1/2 w-full">
@@ -22,10 +23,10 @@ const ProductCard = ({ product }) => {
           </p>
         </div>
         <div className="flex items-center justify-between w-full mt-auto">
-          <p className="text-lg font-bold text-green-600">₹{product.price}</p>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition">
+          <p className="text-lg font-bold text-green-600">₹{Math.floor(product.price)}</p>
+          <Link to={'/product/'+product.id} className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-b-md transition">
             Add To Cart
-          </button>
+          </Link>
         </div>
       </div>
     </div>

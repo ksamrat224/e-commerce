@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addProducts } from "./store/productsSlice";
+import SingleProduct from "./pages/SingleProduct";
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -28,6 +29,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/error" element={<ErrorPage />} />
+        <Route path="/product/:id" element={<SingleProduct/>}/>
       </Routes>
       <Footer />
     </BrowserRouter>
