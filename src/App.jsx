@@ -6,6 +6,14 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 
 export const App = () => {
+  const fetchProducts = async()=>{
+    try{
+  
+    }
+    catch(error){
+      console.log(error)
+    }
+  }
   return (
     <BrowserRouter>
       <NavBar/>
