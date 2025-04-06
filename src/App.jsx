@@ -10,22 +10,21 @@ import { addProducts } from "./store/productsSlice";
 
 export const App = () => {
   const dispatch = useDispatch();
-  const fetchProducts = async()=>{
-    try{
+  const fetchProducts = async () => {
+    try {
       const response = await axios.get("https://fakestoreapi.com/products");
-      const data =  response.data;
+      const data = response.data;
       dispatch(addProducts(data));
+    } catch (error) {
+      console.log(error);
     }
-    catch(error){
-      console.log(error)
-    }
-  }
-  useEffect(()=>{
-   fetchProducts();
-  },[])
+  };
+  useEffect(() => {
+    fetchProducts();
+  }, []);
   return (
     <BrowserRouter>
-      <NavBar/>
+      <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/error" element={<ErrorPage />} />
