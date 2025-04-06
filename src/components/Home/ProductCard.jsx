@@ -25,7 +25,7 @@ const ProductCard = ({ product }) => {
         <div className="flex items-center justify-between w-full mt-auto">
           <p className="text-lg font-bold text-green-600">₹{Math.floor(product.price)}</p>
           <Link to={'/product/'+product.id} className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-b-md transition">
-            Add To Cart
+            View More
           </Link>
         </div>
       </div>

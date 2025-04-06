@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import HomePage from "./pages/HomePage";
 import ErrorPage from "./pages/ErrorPage";
 import { BrowserRouter, Route, Routes } from "react-router";
@@ -8,9 +8,11 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addProducts } from "./store/productsSlice";
 import SingleProduct from "./pages/SingleProduct";
+import Loader from "./components/Loader";
 
 export const App = () => {
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(true);
   const fetchProducts = async () => {
     try {
       const response = await axios.get("https://fakestoreapi.com/products");
@@ -18,18 +20,28 @@ export const App = () => {
       dispatch(addProducts(data));
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
   useEffect(() => {
     fetchProducts();
   }, []);
+  if (loading) {
+    return (
+      <div className=" flex justify-center items-center min-h-screen">
+        <Loader />
+      </div>
+      
+    );
+  }
   return (
     <BrowserRouter>
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/error" element={<ErrorPage />} />
-        <Route path="/product/:id" element={<SingleProduct/>}/>
+        <Route path="/product/:id" element={<SingleProduct />} />
       </Routes>
       <Footer />
     </BrowserRouter>
