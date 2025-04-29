@@ -40,7 +40,7 @@ export const App = () => {
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/error" element={<ErrorPage />} />
+        <Route path="*" element={<ErrorPage />} />
         <Route path="/product/:id" element={<SingleProduct />} />
       </Routes>
       <Footer />
