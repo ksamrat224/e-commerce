@@ -3,7 +3,7 @@ import { CiShop } from "react-icons/ci";
 const Footer = () => {
   return (
     <>
-      <footer className="text-gray-600 body-font border-2 border-rose-200 rounded-lg p-2 bg-white shadow-[0px_5px_10px_-3px_rgba(0,0,0,0.2)] transition-all duration-300 hover:shadow-[0px_8px_15px_-3px_rgba(0,0,0,0.25)] hover:border-rose-400">
+      <footer className="text-gray-600 body-font border-2 border-black rounded-lg p-2 bg-white shadow-[0px_5px_10px_-3px_rgba(0,0,0,0.2)] transition-all duration-300 hover:shadow-[0px_8px_15px_-3px_rgba(0,0,0,0.25)] ">
         <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
           <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
             <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
