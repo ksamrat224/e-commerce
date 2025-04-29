@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { addProducts } from "./store/productsSlice";
 import SingleProduct from "./pages/SingleProduct";
 import Loader from "./components/Loader";
+import CartPage from "./pages/CartPage";
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -41,6 +42,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="*" element={<ErrorPage />} />
+        <Route path="/cart" element={<CartPage />} />
         <Route path="/product/:id" element={<SingleProduct />} />
       </Routes>
       <Footer />
