@@ -1,8 +1,8 @@
 import React from 'react'
 import CartCard from '../components/cart/CartCard'
 import { useSelector } from 'react-redux'
-import { CartSlicePath } from '../redux/Cart.Slice'
 import PeopleRandom from '../components/Cart/PeopleRandom'
+import { CartSlicePath } from '../store/CartSlice'
 
 const CartPage = () => {
 

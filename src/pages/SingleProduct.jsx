@@ -2,9 +2,12 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Loader from "../components/Loader";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../store/CartSlice";
 const SingleProduct = () => {
   const { id } = useParams();
   const [data, setData] = useState({});
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
   const fetchProduct = async () => {
     try {
@@ -29,6 +32,17 @@ const SingleProduct = () => {
       </div>
     );
   }
+  const AddToCart = () => {
+    const item={
+      id: data.id,
+      title: data.title,
+      price: data.price,
+      quantity:1,
+      image: data.image,
+    }
+    dispatch(addProduct(item))
+  }
+
   return (
     <>
       <section className="text-gray-600 body-font overflow-hidden">
@@ -181,7 +195,7 @@ const SingleProduct = () => {
                 <span className="title-font font-medium text-2xl text-gray-900">
                   ₹ {data.price * 100}
                 </span>
-                <button className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                <button onClick={AddToCart} className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
                   Add to Cart
                 </button>
               </div>

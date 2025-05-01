@@ -1,44 +1,66 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import { Link } from 'react-router'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router'; 
 
 const PeopleRandom = () => {
+  const products = useSelector((store) => store.products.products);
 
-    const products = useSelector((store)=>store.ProductSlice.products)
-    const randomIndex =Math.floor(Math.random()*products.length)
+  if (!products || products.length === 0) return <p>No products available.</p>;
 
-    const product = products[randomIndex]
+  const randomIndex = Math.floor(Math.random() * products.length);
+  const product = products[randomIndex];
+
   return (
-    <>
-    {/* {JSON.stringify(products)} */}
-    {/* {randomIndex} */}
-             <div className="space-y-6 overflow-hidden rounded-lg border border-gray-200 bg-white p-6 shadow-sm dsadborder-gray-700 dsadbg-gray-800">
-              <a href="#" className="overflow-hidden rounded">
-                <img className="mx-auto h-44 w-44 dsadhidden" src={product.image} alt="imac image" />
-                
-              </a>
-              <div>
-                <a href="#" className="text-lg font-semibold leading-tight text-gray-900 hover:underline dsadtext-white">{product.title}</a>
-                <p className="mt-2 text-base font-normal text-gray-500 dsadtext-gray-400">{product.description.substring(0,50)}.</p>
-              </div>
-              <div>
-                <p className="text-lg font-bold text-gray-900 dsadtext-white">
-                  <span className="line-through"> &#8377; {Math.ceil(product.price+10)} </span>
-                </p>
-                <p className="text-lg font-bold leading-tight text-red-600 dsadtext-red-500"> &#8377; {Math.ceil(product.price)}</p>
-              </div>
-              <div className="mt-6 flex items-center gap-2.5">
-                
-                <Link to={'/product/'+product.id} type="button" className="inline-flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium  text-black hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dsadbg-primary-600 dsadhover:bg-primary-700 dsadfocus:ring-primary-800">
-                  <svg className="-ms-2 me-2 h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7h-1M8 7h-.688M13 5v4m-2-2h4" />
-                  </svg>
-                  Add to cart
-                </Link>
-              </div>
-            </div>
-    </>
-  )
-}
+    <div className="max-w-sm mx-auto flex flex-col justify-between h-[500px] rounded-xl overflow-hidden border border-gray-200 bg-white shadow-md hover:shadow-lg transition-shadow duration-300">
+    <div className="flex flex-col items-center p-6 flex-grow">
+      <img
+        className="h-44 w-44 object-contain mb-4"
+        src={product.image}
+        alt={product.title}
+      />
+      <h2 className="text-lg font-semibold text-gray-900 text-center hover:underline line-clamp-2">
+        {product.title}
+      </h2>
+      <p className="mt-2 text-sm text-gray-600 text-center line-clamp-2">
+        {product.description}
+      </p>
+  
+      <div className="mt-4 text-center">
+        <p className="text-sm text-gray-400 line-through">
+          ₹{Math.ceil(product.price + 10)}
+        </p>
+        <p className="text-xl font-bold text-red-600">
+          ₹{Math.ceil(product.price)}
+        </p>
+      </div>
+    </div>
+  
+    {/* Fixed position at the bottom */}
+    <div className="p-6 pt-0">
+      <Link
+        to={`/product/${product.id}`}
+        className="inline-flex items-center justify-center w-full px-4 py-2 bg-indigo-600 text-white font-medium text-sm rounded-md hover:bg-indigo-700 transition duration-200"
+      >
+        <svg
+          className="mr-2 h-5 w-5"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          strokeWidth={2}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.5 7h13L17 13M9 21a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z"
+          />
+        </svg>
+        Add to Cart
+      </Link>
+    </div>
+  </div>
+  
+  );
+};
 
-export default PeopleRandom
+export default PeopleRandom;
