@@ -1,5 +1,5 @@
 import React from 'react'
-import CartCard from '../components/cart/CartCard'
+import CartCard from '../components/Cart/CartCard'
 import { useSelector } from 'react-redux'
 import PeopleRandom from '../components/Cart/PeopleRandom'
 import { CartSlicePath } from '../store/CartSlice'
