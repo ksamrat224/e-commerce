@@ -32,6 +32,7 @@ const OrderSummary = ({ originalPrice, savings, pickup, tax, total }) => {
       >
         Proceed to Checkout
       </a>
+        <p className="text-sm font-normal text-gray-500 justify-center items-center flex hover:underline cursor-pointer">Continue Shopping?</p>
     </div>
   );
 };

@@ -16,7 +16,7 @@ const NavBar = () => {
             <Link to={"/"} className="mr-5 hover:text-gray-900">
               Home
             </Link>
-            <Link className="mr-5 hover:text-gray-900">Cart</Link>
+            <Link to={"/cart"} className="mr-5 hover:text-gray-900">Cart</Link>
           </nav>
           <button className="inline-flex items-center bg-blue-600 border-0 py-1 px-3 focus:outline-none hover:bg-blue-700 rounded text-base mt-4 md:mt-0 font-bold text-white hover:text-white">
             LogIn <MdLogin />
